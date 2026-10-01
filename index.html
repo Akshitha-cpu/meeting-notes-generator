@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meeting Notes Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>📝 Meeting Notes Generator</h1>
+
+        <p class="subtitle">
+            Create and download organized meeting notes
+        </p>
+
+        <div class="form-section">
+
+            <label>Meeting Title</label>
+            <input type="text" id="meetingTitle"
+                   placeholder="Enter meeting title">
+
+            <label>Date</label>
+            <input type="date" id="meetingDate">
+
+            <label>Participants</label>
+            <input type="text" id="participants"
+                   placeholder="Enter participant names">
+
+            <label>Discussion Points</label>
+            <textarea id="discussion"
+                      placeholder="Enter discussion points"></textarea>
+
+            <label>Decisions Made</label>
+            <textarea id="decisions"
+                      placeholder="Enter decisions"></textarea>
+
+            <label>Action Items</label>
+            <textarea id="actionItems"
+                      placeholder="Enter action items"></textarea>
+
+            <label>Additional Notes</label>
+            <textarea id="additionalNotes"
+                      placeholder="Enter additional notes"></textarea>
+
+            <button onclick="generateNotes()">
+                Generate Notes
+            </button>
+
+        </div>
+
+        <div id="notesPreview" class="preview hidden">
+
+            <h2>Meeting Notes</h2>
+
+            <p>
+                <strong>Title:</strong>
+                <span id="previewTitle"></span>
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                <span id="previewDate"></span>
+            </p>
+
+            <p>
+                <strong>Participants:</strong>
+                <span id="previewParticipants"></span>
+            </p>
+
+            <h3>Discussion Points</h3>
+            <p id="previewDiscussion"></p>
+
+            <h3>Decisions Made</h3>
+            <p id="previewDecisions"></p>
+
+            <h3>Action Items</h3>
+            <p id="previewActions"></p>
+
+            <h3>Additional Notes</h3>
+            <p id="previewAdditional"></p>
+
+            <button onclick="downloadPDF()">
+                📄 Download PDF
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
